@@ -37,6 +37,7 @@
             
 
 海明，容我也大言不惭的叫一声你的名字。这段时间一直有好多好多话想和你说，但真正开始写的时候又不知道从何说起。你肯定能猜到我又想说一大堆有的没的吧，我知道这种长篇大论你已经看烦了，说的越多只会越让你觉得和我相处很累，所以我以后尽量不会再长篇大论，让这篇文字成为最后一次。
+（写这些话不是想要指责你，说的也比较乱，毫无逻辑）其实，从几个月前开始的时候，我就明白这次一旦结束就真的再也不会有机会了，所以每次说话的时候我都格外珍惜，有时甚至到了一种如履薄冰的程度，我好怕突然就失去你，
             <a class="read-more" href="/2023/09/28/hello-world/"> ... </a>
         </div>
         <div class="post-date">2023.09.28</div>
@@ -61,6 +62,36 @@
     hljs.initLineNumbersOnLoad();
 </script>
 
+{% if theme.busuanzi_count.enable %}
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+{% endif %}
             </div>
         </div>
     </body>
